@@ -11,46 +11,51 @@
 <header>
   <a href="index.html">Головна</a>
   <a href="tasks.html">Завдання</a>
-  <a href="schedule.html">Розклад</a>
+  <a href="">Розклад</a>
   <a href="about.html">Про сайт</a>
 </header>
 
 <main>
   <h1>Розклад</h1>
 
-  <table border="1" cellpadding="8" cellspacing="0">
-    <thead>
-    <tr>
+  <table border="1" cellpadding="10" cellspacing="5" width="100%" style="border-collapse: collapse; text-align: center; ">
+    <caption><strong>Тижневий розклад</strong></caption>
+
+    <colgroup>
+      <col style="background-color: #f0f8ff;">
+      <col span="2" style="background-color: #fff8dc;">
+      <col style="background-color: #f5f5f5;">
+    </colgroup>
+
+    <thead style="background-color: #cceeff;">
+    <tr align="center">
       <th>День</th>
-      <th>Час</th>
-      <th>Завдання</th>
+      <th>1 пара</th>
+      <th>2 пара</th>
+      <th>Аудиторія</th>
     </tr>
     </thead>
+
     <tbody>
     <tr>
-      <td>Понеділок</td>
-      <td>10:00</td>
-      <td>Навчання</td>
+      <td rowspan="2" align="center">Понеділок</td>
+      <td align="left">Математика</td>
+      <td align="center">Інформатика</td>
+      <td align="right">101</td>
     </tr>
     <tr>
-      <td>Вівторок</td>
-      <td>14:00</td>
-      <td>Робота над проєктом</td>
+      <td colspan="2" align="center">Фізкультура</td>
+      <td align="right">Спортзал</td>
     </tr>
     <tr>
-      <td>Середа</td>
-      <td>11:00</td>
-      <td>Лабораторна робота</td>
+      <td align="center">Вівторок</td>
+      <td>Англійська</td>
+      <td>Історія</td>
+      <td align="right">202</td>
     </tr>
     <tr>
-      <td>Четвер</td>
-      <td>09:00</td>
-      <td>Спортзал</td>
-    </tr>
-    <tr>
-      <td>Пʼятниця</td>
-      <td>15:00</td>
-      <td>Відпочинок</td>
+      <td align="center">Середа</td>
+      <td colspan="3" align="center">Самостійна робота</td>
     </tr>
     </tbody>
   </table>
