@@ -12,11 +12,13 @@ function userDialog() {
         alert("До зустрічі!");
     }
 }
+
 userDialog();
 
 function showDeveloperInfo(surname, name, position = "PHP Developer") {
     alert(`Розробник: ${surname} ${name}\\nПосада: ${position}`);
 }
+
 showDeveloperInfo("Кузьменко", "Володимир");
 
 const compareStrings = (a, b) => {
@@ -25,22 +27,3 @@ const compareStrings = (a, b) => {
     else alert("Рядки однакової довжини.");
 };
 compareStrings(prompt("1 рядок:"), prompt("2 рядок:"));
-
-
-
-// // Створення, вставка, заміна, видалення
-// const newDiv = document.createElement("div");
-// newDiv.textContent = "📌 Додано через JS";
-// document.body.appendChild(newDiv);
-//
-// const parent = document.getElementById("parent");
-// if (parent) {
-//     const newP = document.createElement("p");
-//     newP.textContent = "✅ Нова задача";
-//     parent.prepend(newP);
-//     parent.after(newP.cloneNode(true));
-//     parent.replaceWith(newP.cloneNode(true));
-// }
-//
-// const toRemove = document.getElementById("removeMe");
-// if (toRemove) toRemove.remove();

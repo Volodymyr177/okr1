@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kuzmenko Volodymyr">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Особистий щоденник завдань</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Головна</a>
+    <a href="tasks.html">Завдання</a>
+    <a href="schedule.html">Розклад</a>
+    <a href="about.html">Про сайт</a>
+</header>
+<button onclick="handleClick()">Click (attr)</button>
+
+<button id="btn">Click one more</button>
+
+<button id="btn2">Click to see numbers</button>
+
+<button id="btn3">Click object</button>
+
+<button id="btn4">Remove</button>
+
+<ul id="plans-list">
+    <li>Пункт 1</li>
+    <li>Пункт 2</li>
+    <li>Пункт 3</li>
+</ul>
+
+<div id="menu">
+    <button data-action="sayHello">Hello</button>
+    <button data-action="sayBye">Goodbye</button>
+    <button data-action="showTime">Show time</button>
+</div>
+
+<script>
+    function handleClick() {
+        alert("Click");
+    }
+
+    const clickBtn = document.getElementById("btn");
+    clickBtn.onclick = () => alert("Click one more");
+
+    let btn2 = document.getElementById("btn2");
+
+    const handler1 = () => console.log("1");
+    const handler2 = () => console.log("2");
+
+    btn2.addEventListener("click", handler1);
+    btn2.addEventListener("click", handler2);
+
+    let btn3 = document.getElementById("btn3");
+    let handlerObj = {
+        handleEvent(event) {
+            alert(`Обробник через об'єкт. Натиснуто: ${event.currentTarget.tagName}`);
+        },
+    };
+    btn3.addEventListener("click", handlerObj);
+
+    let btn4 = document.getElementById("btn4");
+    const hello = () => alert("Hello!");
+    btn4.addEventListener("click", hello);
+
+    setTimeout(() => {
+        btn4.removeEventListener("click", hello);
+        alert("Обробник видалено!");
+    }, 5000);
+
+    const plansList = document.getElementById("plans-list");
+
+    console.log(plansList);
+
+    plansList.addEventListener("click", lightItem);
+
+    function lightItem(e) {
+        console.log(e.target)
+        const item = e.target.closest("li");
+        if (item) {
+            item.classList.add("light");
+        }
+    }
+
+    const menu = document.getElementById("menu");
+
+    menu.addEventListener("click", setMenu);
+
+    function setMenu(e) {
+        let action = e.target.dataset.action;
+
+        let actions = {
+            sayHello: () => alert("Привіт!"),
+            sayBye: () => alert("До побачення!"),
+            showTime: () => alert(new Date().toLocaleTimeString()),
+        };
+        if (actions[action]) actions[action]();
+    }
+
+</script>
+
+</body>
+</html>
