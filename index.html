@@ -98,7 +98,63 @@
         <dt>CSS</dt>
         <dd>Мова стилів</dd>
     </dl>
+
+    <h1 class="dom">Старий заголовок</h1>
+
+    <a href="#" class="link">Посилання 1</a>
+    <a href="#" class="link">Посилання 2</a>
+
+    <div id="parent">Батьківський блок</div>
+
+    <div id="removeMe">Це буде видалено</div>
+
 </main>
+
+<script>
+    alert("Ласкаво просимо до щоденника!");
+
+    let userName = prompt("Як вас звати?", "Гена");
+    let isReady = confirm("Готові працювати зі справами?");
+
+    if (isReady) {
+        alert(`Чудово, ${userName}! Розпочинаємо`);
+    } else {
+        alert("Поверніться, коли будете готові.");
+    }
+
+    const links = document.querySelectorAll(".link");
+    links.forEach((link) => {
+        link.style.color = "beige";
+    });
+
+    const dom = document.querySelector(".dom");
+    if (dom) {
+        // dom.innerHTML = "<b>Жирний текст</b>";
+        dom.outerHTML = "<h2>Новий заголовок</h2>";
+        // dom.textContent = "Цей текст буде без тегів";
+    }
+
+    document.write("<h1>Це додано через document.write()</h1>");
+
+    let newDiv = document.createElement("h1");
+    let textNode = document.createTextNode("Це вставлено через createTextNode()");
+    newDiv.appendChild(textNode);
+    document.body.appendChild(newDiv);
+
+    let parent = document.getElementById("parent");
+    let newP = document.createElement("p");
+    newP.textContent = "Новий параграф";
+
+    if (parent) {
+        parent.prepend(newP.cloneNode(true));
+        parent.after(newP.cloneNode(true));
+        parent.replaceWith(newP.cloneNode(true));
+    }
+
+    const remove = document.getElementById("removeMe");
+    if (remove) remove.remove();
+
+</script>
 
 </body>
 </html>

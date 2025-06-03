@@ -1,35 +1,69 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Kuzmenko Volodymyr">
-  <link rel="stylesheet" href="css/style.css">
-  <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kuzmenko Volodymyr">
+    <link rel="stylesheet" href="css/style.css">
+    <title></title>
 </head>
 <body>
 <header>
-  <a href="index.html">Головна</a>
-  <a href="tasks.html">Завдання</a>
-  <a href="schedule.html">Розклад</a>
-  <a href="">Про сайт</a>
+    <a href="index.html">Головна</a>
+    <a href="tasks.html">Завдання</a>
+    <a href="schedule.html">Розклад</a>
+    <a href="">Про сайт</a>
 </header>
 
 <main>
-  <section></section>
-  <p>Для створення цього сайту були використані знання з HTML, CSS, JavaScript.</p>
-  <p><font color="blue" size="4" face="Arial"><b>Проєкт створено студентом</b></font></p>
-  <p><font color="green" size="3" face="Verdana"><i>Про мене</i></font></p>
-  <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5398686.285320095!2d25.90500842345546!3d48.64663664679489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d1d9c154700e8f%3A0x1068488f64010!2z0KPQutGA0LDQuNC90LA!5e0!3m2!1sru!2sua!4v1748914523386!5m2!1sru!2sua"
-          width="600"
-          height="450"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
+    <section></section>
+    <p>Для створення цього сайту були використані знання з HTML, CSS, JavaScript.</p>
+    <p><font color="blue" size="4" face="Arial"><b>Проєкт створено студентом</b></font></p>
+    <p><font color="green" size="3" face="Verdana"><i>Про мене</i></font></p>
+    <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5398686.285320095!2d25.90500842345546!3d48.64663664679489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d1d9c154700e8f%3A0x1068488f64010!2z0KPQutGA0LDQuNC90LA!5e0!3m2!1sru!2sua!4v1748914523386!5m2!1sru!2sua"
+            width="600"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    <h2 id="title">Справи на сьогодні</h2>
+
+    <div id="parent">Це буде замінено</div>
+    <div class="dom">Змінюваний блок</div>
+
+    <a class="link" href="#">Тестове посилання</a>
+    <a class="link" href="#">Ще одне</a>
+
+    <div id="removeMe">Цей блок буде видалено</div>
+
 </main>
+
+<script>
+    function getRandomColor() {
+        return "#" + Math.floor(Math.random() * 16777215).toString(16);
+    }
+
+    function changeBackground() {
+        document.body.style.backgroundColor = getRandomColor();
+    }
+
+    let interval = setInterval(changeBackground, 1000);
+    setTimeout(() => {
+        clearInterval(interval);
+        document.body.style.backgroundColor = "beige";
+    }, 30000);
+
+    const dom = document.querySelector(".dom");
+    if (dom) {
+        // dom.innerHTML = "<b>Жирний текст</b>";
+        dom.outerHTML = "<h1>Новий заголовок</h1>";
+        // dom.textContent = "Цей текст буде без тегів";
+    }
+</script>
 
 </body>
 </html>

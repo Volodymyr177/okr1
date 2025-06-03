@@ -16,7 +16,7 @@
 </header>
 
 <main>
-    <h1>Мої завдання</h1>
+    <h1 id="title">Мої завдання</h1>
     <p><font color="blue" size="4" face="Arial"><b>Поточні завдання на день</b></font></p>
     <p><font color="green" size="3" face="Verdana"><i>Завдання дня</i></font></p>
 
@@ -64,7 +64,7 @@
         </p>
 
         <ul class="external-links">
-            <li><a class="partner-link" href="https://github.com" target="_blank">GitHub</a></li>
+            <li><a id="link" class="partner-link" href="https://github.com" target="_blank">GitHub</a></li>
             <li><a class="partner-link" href="https://trello.com" target="_blank">Trello</a></li>
             <li><a class="partner-link" href="https://calendar.google.com" target="_blank">Google Calendar</a></li>
         </ul>
@@ -78,6 +78,17 @@
     </div>
 
 </main>
+
+<script>
+    //setTimeout(() => location.href = "https://calendar.google.com", 5000);
+
+    const title = document.getElementById("title");
+    if (title) title.textContent = "Сьогоднішні справи";
+
+    document.querySelectorAll("#link").forEach(el => {
+        el.style.color = "green";
+    });
+</script>
 
 </body>
 </html>
