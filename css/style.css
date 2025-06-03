@@ -110,4 +110,72 @@ strong + p {
     font-weight: bold;
 }
 
+.planner-container {
+    width: 80%;
+    margin: 3rem auto;
+    font-family: sans-serif;
+}
+
+.reminder-box {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: lightblue;
+    border: 2px solid steelblue;
+    padding: 10px;
+}
+
+.task-box {
+    float: left;
+    width: 30%;
+    background: lightgreen;
+    border: 2px solid green;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.highlight {
+    background: yellow;
+    font-weight: bold;
+}
+
+.partner-link:link {
+    color: magenta;
+}
+.partner-link:visited {
+    color: mediumaquamarine;
+}
+.partner-link:hover {
+    color: firebrick;
+}
+.partner-link:active {
+    color: sandybrown;
+}
+
+.external-links li:first-child {
+    background-color: #f0f8ff;
+    font-weight: bold;
+}
+
+dt::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #404bbf;
+}
+
+dd::before {
+    content: "→";
+    padding-right: 5px;
+}
+
 
