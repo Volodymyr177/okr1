@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kuzmenko Volodymyr">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Особистий щоденник завдань</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Головна</a>
+    <a href="tasks.html">Завдання</a>
+    <a href="schedule.html">Розклад</a>
+    <a href="about.html">Про сайт</a>
+</header>
+<div class="hoverable" style="width: 200px; height: 100px; background: #eee; margin: 10px;">Завдання 1</div>
+<div class="hoverable" style="width: 200px; height: 100px; background: #eee; margin: 10px;">Завдання 2</div>
+
+<div id="drag-item" style="
+  width: 150px;
+  height: 150px;
+  background: tomato;
+  color: white;
+  text-align: center;
+  line-height: 150px;
+  position: relative;
+  cursor: grab;
+  margin-top: 30px;
+">
+    Перетягни мене
+</div>
+
+<script>
+
+    const items = document.querySelectorAll(".hoverable");
+
+    items.forEach(item => {
+        item.addEventListener("mouseover", e => {
+            const from = e.relatedTarget;
+            if (!item.contains(from)) {
+                item.style.backgroundColor = "#cce5ff";
+                item.style.border = "2px dashed #333";
+            }
+        });
+
+        item.addEventListener("mouseout", e => {
+            const to = e.relatedTarget;
+            if (!item.contains(to)) {
+                item.style.backgroundColor = "";
+                item.style.border = "";
+            }
+        });
+    });
+
+    const draggable = document.getElementById("drag-item");
+    let isDragging = false;
+
+    draggable.addEventListener("mousedown", function (e) {
+        isDragging = true;
+        draggable.style.position = "absolute";
+        draggable.style.zIndex = 1000;
+    });
+
+    document.addEventListener("mousemove", function (e) {
+        if (isDragging) {
+            draggable.style.left = e.pageX - draggable.offsetWidth / 2 + "px";
+            draggable.style.top = e.pageY - draggable.offsetHeight / 2 + "px";
+        }
+    });
+
+    document.addEventListener("mouseup", function () {
+        isDragging = false;
+    });
+</script>
+
+</body>
+</html>
