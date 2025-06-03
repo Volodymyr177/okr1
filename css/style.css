@@ -93,3 +93,21 @@ header {
     padding: 10px;
     margin-bottom: 20px;
 }
+
+.task p span {
+    color: darkgreen;
+    font-style: italic;
+}
+
+strong + p {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-left: 4px solid #aaa;
+}
+
+.todo-list > li {
+    list-style-type: square;
+    font-weight: bold;
+}
+
+
