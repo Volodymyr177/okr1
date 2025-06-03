@@ -41,6 +41,8 @@ table th, table td {
     border: 1px solid #888;
 }
 
+table
+
 thead {
     background-color: #dfefff;
 }
@@ -179,7 +181,6 @@ strong + p {
 }
 
 dt::after {
-    content: "";
     position: absolute;
     width: 10px;
     height: 10px;
